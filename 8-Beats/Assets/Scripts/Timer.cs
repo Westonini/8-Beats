@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
 
     public float firstBeatOffset;      //The offset to the first beat of the song in seconds.
 
-    public float _noteSlowness;         //The higher the value the slower the notes
+    [Range(1, 10)] public float _noteSlowness; //The higher the value the slower the notes. Has a range of 1-10
     public static float noteSlowness; //The static variable for note slowness which other scripts can access.
 
     //Start is called before the first frame update
