@@ -2,19 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//The timer class keeps track of the song's BPM, seconds per beat, and song position in order to scroll the notes accordingly.
 public class Timer : MonoBehaviour
 {
     public float bpm;                  //BPM of the song that's to be entered in the inspector
-    public float songPos;              //Current song position in seconds  
-    public float songPosInBeats;  //Current song position in beats
+    public static float songPos;       //Current song position in seconds  
+    public static float songPosInBeats;//Current song position in beats
     public float secondsSinceStart;    //How many seconds have passed since the song started
-    public float spb;                  //Beats per second. Calculated by simply dividing the BPM by 60f.
+    public float spb;                  //Seconds per beat, or seconds between beats.
 
     public float firstBeatOffset;      //The offset to the first beat of the song in seconds.
 
-    // Start is called before the first frame update
+    public float _noteSlowness;         //The higher the value the slower the notes
+    public static float noteSlowness; //The static variable for note slowness which other scripts can access.
+
+    //Start is called before the first frame update
     void Start()
     {
+        //Reset these static variables to zero at Start().
+        songPos = 0f;
+        songPosInBeats = 0f;
+        //Sets the static noteSlowness variable to the _noteSlowness value from the inspector
+        noteSlowness = _noteSlowness;
+
         //Number of seconds between each beat.   
         spb = 60f / bpm;
 
@@ -22,7 +32,7 @@ public class Timer : MonoBehaviour
         secondsSinceStart = (float)AudioSettings.dspTime;
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         //determine how many seconds since the song started
