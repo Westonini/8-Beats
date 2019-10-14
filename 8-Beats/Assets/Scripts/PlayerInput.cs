@@ -4,29 +4,34 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    private SpriteRenderer spriteRender;
-    public Sprite normLeaf;
-    public Sprite darkLeaf;
+    private Renderer render;
 
-    public KeyCode pressedKey;
+    [SerializeField]
+    private Color colorDefault = Color.white;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    private Color colorChange = Color.white;
+
+    public KeyCode pressedKey1;
+    public KeyCode pressedKey2;
+    
+
     void Start()
     {
-        spriteRender = GetComponent<SpriteRenderer>();
+        render = GetComponent<Renderer>();
+        render.material.color = colorDefault;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(pressedKey))
+        if (Input.GetKeyDown(pressedKey1) | Input.GetKeyDown(pressedKey2))
         {
-            spriteRender.sprite = darkLeaf;
+            render.material.color = colorChange;
         }
 
-        if(Input.GetKeyUp(pressedKey))
+        if (Input.GetKeyUp(pressedKey1) | Input.GetKeyUp(pressedKey2))
         {
-            spriteRender.sprite = normLeaf;
+            render.material.color = colorDefault;
         }
     }
 }

@@ -244,9 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8c074524030ca4db924dc082e26705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normLeaf: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
-  darkLeaf: {fileID: 21300000, guid: 20f65a832ad959e489feaeced38538c4, type: 3}
-  pressedKey: 115
+  colorDefault: {r: 0, g: 0.4223609, b: 1, a: 1}
+  colorChange: {r: 0, g: 0.17749663, b: 0.5377358, a: 1}
+  pressedKey1: 115
+  pressedKey2: 274
 --- !u!212 &102703259
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -285,7 +286,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c232fbe47bb64c408e2d69a4e3c4fd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -598,9 +599,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8c074524030ca4db924dc082e26705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normLeaf: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
-  darkLeaf: {fileID: 21300000, guid: 20f65a832ad959e489feaeced38538c4, type: 3}
-  pressedKey: 97
+  colorDefault: {r: 0.6843219, g: 0, b: 1, a: 1}
+  colorChange: {r: 0.38814044, g: 0, b: 0.5660378, a: 1}
+  pressedKey1: 97
+  pressedKey2: 276
 --- !u!212 &224275212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -639,7 +641,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c232fbe47bb64c408e2d69a4e3c4fd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2287,9 +2289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8c074524030ca4db924dc082e26705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normLeaf: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
-  darkLeaf: {fileID: 21300000, guid: 20f65a832ad959e489feaeced38538c4, type: 3}
-  pressedKey: 100
+  colorDefault: {r: 0, g: 1, b: 0.04085064, a: 1}
+  colorChange: {r: 0.012117237, g: 0.4245283, b: 0.006007465, a: 1}
+  pressedKey1: 100
+  pressedKey2: 275
 --- !u!212 &1471380101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2328,7 +2331,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c232fbe47bb64c408e2d69a4e3c4fd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3594,9 +3597,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8c074524030ca4db924dc082e26705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normLeaf: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
-  darkLeaf: {fileID: 21300000, guid: 20f65a832ad959e489feaeced38538c4, type: 3}
-  pressedKey: 119
+  colorDefault: {r: 1, g: 0, b: 0, a: 1}
+  colorChange: {r: 0.4811321, g: 0, b: 0, a: 1}
+  pressedKey1: 119
+  pressedKey2: 273
 --- !u!4 &7568750558900643049
 Transform:
   m_ObjectHideFlags: 0
@@ -3667,7 +3671,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: d0b6bec606b5ab242914b0a342778f56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c232fbe47bb64c408e2d69a4e3c4fd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
