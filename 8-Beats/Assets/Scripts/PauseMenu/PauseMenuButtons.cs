@@ -21,12 +21,14 @@ public class PauseMenuButtons : MonoBehaviour
     //RETRY BUTTON
     public void Retry()
     {
+        AudioListener.pause = false;                                //Unpauses dspTime and unmutes all audio
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Reload the current level
     }
 
     //MAIN MENU BUTTON
     public void MainMenu()
     {
-        SceneManager.LoadScene(0); //Load the main menu scene.
+        AudioListener.pause = false;   //Unpauses dspTime and unmutes all audio
+        SceneManager.LoadScene(0);    //Load the main menu scene.
     }
 }

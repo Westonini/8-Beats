@@ -8,6 +8,10 @@ public class ButtonSounds : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip selectSoundClip;
 
+    public void Start()
+    {
+        audioSource.ignoreListenerPause = true; //Makes it so that audio still plays from this source when timescale is zero.
+    }
 
     //SELECT/CLICK SOUND
     public void SelectSound()

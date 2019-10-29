@@ -9,16 +9,10 @@ public class NoteDetector : MonoBehaviour
     public KeyCode pressedKey1;
     public KeyCode pressedKey2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(pressedKey1) | Input.GetKeyDown(pressedKey2))
+        if((Input.GetKeyDown(pressedKey1) | Input.GetKeyDown(pressedKey2)) && !PauseMenu.gameIsPaused)
         {
             if(canBePressed)
             {
@@ -42,5 +36,4 @@ public class NoteDetector : MonoBehaviour
             canBePressed = false;
         }
     }
-
 }
