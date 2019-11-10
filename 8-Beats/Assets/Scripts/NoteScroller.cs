@@ -50,6 +50,9 @@ public class NoteScroller : MonoBehaviour
             //Calls the Damage script to decrease the player's health on a miss
             HealthSys.Damage();
 
+            //Play note miss sound
+            AudioManager.instance.PlayOneShot("NoteMiss");
+
             //Call any methods that are currently subscribed to the _noteReachedDestination event
             if (_noteReachedDestination != null)
                 _noteReachedDestination();

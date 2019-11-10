@@ -12,5 +12,6 @@ public class SongSelect : MonoBehaviour
     public void SelectSong()
     {
         SceneManager.LoadScene(songSceneName); //Load the scene of the song
+        AudioManager.instance.Stop("MM_Music"); //Stops the main menu music
     }
 }

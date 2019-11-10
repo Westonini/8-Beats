@@ -17,6 +17,7 @@ public class NoteDetector : MonoBehaviour
             if(canBePressed)
             {
                 gameObject.SetActive(false);
+                AudioManager.instance.PlayOneShot("NoteHit");
             }
         }
     }

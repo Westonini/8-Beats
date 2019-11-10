@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8243322070790933974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8243322070790933968}
+  - component: {fileID: 8243322070790933975}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8243322070790933968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243322070790933974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.13312, y: -1.1378582, z: 259.44977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8243322070790933975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243322070790933974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2532e88c92a5c5043a9cdfc5e101091f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: MM_Music
+    clip: {fileID: 8300000, guid: 121c885009245b84c8a70b00b7c0b7f0, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    ignoreListenerPause: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: NoteHit
+    clip: {fileID: 8300000, guid: fc7eaca02bb398941b2ce032d2770c85, type: 3}
+    volume: 0.25
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    ignoreListenerPause: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: NoteMiss
+    clip: {fileID: 8300000, guid: d1f390d103744da4288afc82244464af, type: 3}
+    volume: 0.25
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    ignoreListenerPause: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: 24bbbb9107b6b0648a770f943328a816, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    ignoreListenerPause: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: dc9edfc090cf0474798c990e9c3fc097, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    ignoreListenerPause: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

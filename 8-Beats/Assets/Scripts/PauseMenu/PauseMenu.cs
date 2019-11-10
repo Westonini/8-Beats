@@ -15,9 +15,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuPanel;
     public Animator panelAnim;
 
-    public AudioSource songSource;
-    private float currentAudioClipTime;
-
     void Start()
     {
         gameIsPaused = false; //Reset this bool to false at the start of the scene. (You need to do this just because this is a static bool)

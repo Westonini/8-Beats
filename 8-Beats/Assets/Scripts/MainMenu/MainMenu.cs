@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;       //Main menu panel
     public GameObject songSelection;  //Song selection panel
 
+    private void Start()
+    {
+        AudioManager.instance.Play("MM_Music"); //Play the main menu music at Start().
+    }
+
     //PLAY BUTTON
     public void Play()
     {
