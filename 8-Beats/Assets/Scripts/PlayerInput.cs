@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(pressedKey1) | Input.GetKeyDown(pressedKey2)) && !PauseMenu.gameIsPaused)
+        if ((Input.GetKeyDown(pressedKey1) | Input.GetKeyDown(pressedKey2)) && !PauseMenu.gameIsPaused && !SongFinished.songFinished)
         {
             render.material.color = colorChange;
         }
