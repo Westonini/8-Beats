@@ -43,17 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2532e88c92a5c5043a9cdfc5e101091f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 0}
   sounds:
   - name: MM_Music
     clip: {fileID: 8300000, guid: 121c885009245b84c8a70b00b7c0b7f0, type: 3}
-    volume: 0.6
+    volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 1
     ignoreListenerPause: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -1852521641757758011, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}
   - name: NoteHit
     clip: {fileID: 8300000, guid: fc7eaca02bb398941b2ce032d2770c85, type: 3}
@@ -82,7 +82,17 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0
     loop: 0
-    ignoreListenerPause: 0
+    ignoreListenerPause: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: ButtonHover2
+    clip: {fileID: 8300000, guid: e3b9390b29663324da870b068aefacc4, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    ignoreListenerPause: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: ButtonClick
@@ -92,6 +102,16 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0
     loop: 0
-    ignoreListenerPause: 0
+    ignoreListenerPause: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SongComplete
+    clip: {fileID: 8300000, guid: d2e52ba76ae77974194a6394b9ab0899, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    ignoreListenerPause: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

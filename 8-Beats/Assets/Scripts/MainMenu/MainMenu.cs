@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;       //Main menu panel
     public GameObject songSelection;  //Song selection panel
+    public GameObject optionsMenu;    //Options menu panel
 
     private void Start()
     {
@@ -20,11 +21,19 @@ public class MainMenu : MonoBehaviour
         songSelection.SetActive(true); //Enables the song selection panel
     }
 
+    //OPTIONS MENU
+    public void Options()
+    {
+        mainMenu.SetActive(false);     //Disables the main menu panel
+        optionsMenu.SetActive(true); //Enables the options menu panel
+    }
+
     //BACK BUTTON
     public void Back()
     {
         mainMenu.SetActive(true);       //Enables the main menu panel
         songSelection.SetActive(false); //Disables the song selection panel
+        optionsMenu.SetActive(false);   //Disables the options menu panel
     }
 
     //QUIT BUTTON
