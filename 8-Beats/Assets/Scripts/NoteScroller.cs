@@ -13,8 +13,15 @@ public class NoteScroller : MonoBehaviour
 
     public float beatOfNote;      //The beat of the note in the song
 
+    private NoteFadeOut nfo;
+
     public delegate void NoteReachedDestination();
-    public event NoteReachedDestination _noteReachedDestination;            //Event to be invoked when the note reaches its final destination (0, 0)
+    public static event NoteReachedDestination _noteReachedDestination;            //Event to be invoked when the note reaches its final destination (0, 0)
+
+    void Awake()
+    {
+        nfo = GetComponent<NoteFadeOut>();
+    }
 
     //Update is called once per frame
     void Update()
@@ -52,6 +59,8 @@ public class NoteScroller : MonoBehaviour
 
             //Play note miss sound
             AudioManager.instance.PlayOneShot("NoteMiss");
+
+            nfo.StartCoroutine("FadeAndDestroy");
 
             //Call any methods that are currently subscribed to the _noteReachedDestination event
             if (_noteReachedDestination != null)
