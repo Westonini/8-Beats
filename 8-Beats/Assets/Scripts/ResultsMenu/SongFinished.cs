@@ -26,7 +26,7 @@ public class SongFinished : MonoBehaviour
     void Update()
     {
         //If the current position in the song is equal to the song's total length + 5 seconds (meaning the song is finished and there's 5 extra seconds), set the songFinished boolean to true.
-        if ((Timer.songPos >= songLength + 2.5f) && !songFinished)
+        if ((Timer.songPos >= songLength + 2.5f) && !songFinished && !GameOverMenu.gameOverActive)
         {
             rm.EnableResultsMenu();
             songFinished = true;
