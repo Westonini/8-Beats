@@ -58,7 +58,8 @@ public class NoteScroller : MonoBehaviour
             HealthSys.Damage();
 
             //Play note miss sound
-            AudioManager.instance.PlayOneShot("NoteMiss");
+            if (HealthSys.health > 0)
+             AudioManager.instance.PlayOneShot("NoteMiss");
 
             nfo.StartCoroutine("FadeAndDestroy");
 

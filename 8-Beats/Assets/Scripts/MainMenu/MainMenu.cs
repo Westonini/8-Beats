@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.instance.Play("MM_Music"); //Play the main menu music at Start().
+        AudioManager.instance.Play("MM_Music"); //Play the main menu music at Start().   
     }
 
     //PLAY BUTTON

@@ -31,6 +31,6 @@ public class PauseMenuButtons : MonoBehaviour
     {
         AudioListener.pause = false;                      //Unpauses dspTime and unmutes all audio
         Time.timeScale = 1f; Time.fixedDeltaTime = 0.02f; //Resets timescales
-        SceneManager.LoadScene(0);                        //Load the main menu scene.
+        SceneManager.LoadScene(1);                        //Load the main menu scene.
     }
 }
