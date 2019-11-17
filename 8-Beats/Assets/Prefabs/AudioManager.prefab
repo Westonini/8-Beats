@@ -63,7 +63,8 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     ignoreListenerPause: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -6581466541702554709, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}
   - name: NoteMiss
     clip: {fileID: 8300000, guid: d1f390d103744da4288afc82244464af, type: 3}
@@ -73,7 +74,8 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     ignoreListenerPause: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -6581466541702554709, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}
   - name: ButtonHover
     clip: {fileID: 8300000, guid: 24bbbb9107b6b0648a770f943328a816, type: 3}
@@ -83,7 +85,8 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     ignoreListenerPause: 1
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 9053979178481702229, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}
   - name: ButtonHover2
     clip: {fileID: 8300000, guid: e3b9390b29663324da870b068aefacc4, type: 3}
@@ -93,7 +96,8 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     ignoreListenerPause: 1
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 9053979178481702229, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}
   - name: ButtonClick
     clip: {fileID: 8300000, guid: dc9edfc090cf0474798c990e9c3fc097, type: 3}
@@ -103,7 +107,8 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     ignoreListenerPause: 1
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 9053979178481702229, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}
   - name: SongComplete
     clip: {fileID: 8300000, guid: d2e52ba76ae77974194a6394b9ab0899, type: 3}
@@ -113,5 +118,6 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     ignoreListenerPause: 1
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -6581466541702554709, guid: 7bd4b343ecb7b734c95cb478a3177bb9,
+      type: 2}
     source: {fileID: 0}

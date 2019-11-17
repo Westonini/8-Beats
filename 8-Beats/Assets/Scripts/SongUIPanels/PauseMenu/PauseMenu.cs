@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,8 +13,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public TextMeshProUGUI countdownText;
 
+    [Space]
     public GameObject pauseMenuPanel;
     public Animator panelAnim;
+
+    [Space]
+    public Button resumeButton;
+    public Button retryButton;
+    public Button mainMenuButton;
 
     void Start()
     {
@@ -39,9 +46,14 @@ public class PauseMenu : MonoBehaviour
     {
         if (state) //Enable pause menu freeze time
         {
+            //Disable the button functionality
+            resumeButton.enabled = false;
+            retryButton.enabled = false;
+            mainMenuButton.enabled = false;
+
             pauseMenuPanel.SetActive(true);                 //Enable the pause menu UI panel
             pauseMenu.SetActive(true);                      //Enable pause menu gameobjects
-            panelAnim.SetBool("FadeIn", true);              //Fade in the background
+            StartCoroutine("FadeIn");
             gameIsPaused = true;                            //Set the gameIsPaused bool to true
 
             Time.timeScale = 0f; Time.fixedDeltaTime = 0f;  //Set the timescales to zero (freezes the game)
@@ -53,13 +65,35 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    private IEnumerator FadeIn()
+    {
+        panelAnim.SetBool("FadeIn", true);              //Fade in the menu
+        yield return new WaitForSecondsRealtime(0.5f);  //Wait half a second before running the following code
+        panelAnim.SetBool("FadeIn", false);             //Switch the animation state to idle
+
+        //Enable the button functionality
+        resumeButton.enabled = true; 
+        retryButton.enabled = true; 
+        mainMenuButton.enabled = true;
+    }
+
     //COUNTDOWN BEFORE UNPAUSE
     private IEnumerator Countdown()
     {
-        pauseMenu.SetActive(false);                          //Disable pause menu panel gameobject
+        yield return new WaitForSecondsRealtime(0.05f);  //Wait 0.05f seconds so that the click sound still plays
+
+        //Disable the button functionality
+        resumeButton.enabled = false;
+        retryButton.enabled = false;
+        mainMenuButton.enabled = false;
+
         countingDown = true;                                 //Set countingDown to true 
+        StopCoroutine("FadeIn");
         panelAnim.SetBool("FadeIn", false);                  //Stop the background's FadeIn animation
         panelAnim.SetBool("FadeOut", true);                  //Start the background's FadeOut animation
+
+        yield return new WaitForSecondsRealtime(0.5f);         //Wait half a second before running the following code
+
         countdownText.color = new Color32(255, 0, 0, 255);   //Change the countdown text color to red
         countdownText.text = "3";                            //Change the countdown text to "3"
 
@@ -77,6 +111,7 @@ public class PauseMenu : MonoBehaviour
 
         panelAnim.SetBool("FadeOut", false);                 //Stop the background's FadeOut animation
         countdownText.text = "";                             //Change the countdown text to nothing
+        pauseMenu.SetActive(false);                          //Disable pause menu panel gameobject
 
         Time.timeScale = 1f; Time.fixedDeltaTime = 0.02f;    //Set the timescales to default (unfreezes the game)
         pauseMenuPanel.SetActive(false);                     //Disable the pause menu UI panel

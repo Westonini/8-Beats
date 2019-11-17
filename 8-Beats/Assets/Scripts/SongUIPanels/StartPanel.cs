@@ -12,6 +12,8 @@ public class StartPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPanel.SetActive(true);
+
         startMenuOpen = true; //Reset the startMenuOpen bool to true at the start of the scene
 
         Time.timeScale = 0f; Time.fixedDeltaTime = 0f;  //Set the timescales to zero (freezes the game)
