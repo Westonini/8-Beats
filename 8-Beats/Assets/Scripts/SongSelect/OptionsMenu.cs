@@ -13,15 +13,18 @@ public class OptionsMenu : MonoBehaviour
     [Space]
     public TextMeshProUGUI musicVolText;
     public TextMeshProUGUI effectsVolText;
+    public TextMeshProUGUI uiVolText;
 
     [Space]
     public Slider musicVolSlider;
     public Slider effectsVolSlider;
+    public Slider uiVolSlider;
     public Toggle fullscreenToggle;
     public TMP_Dropdown resolutionDropdown;
 
     static float musicVol;
     static float effectsVol;
+    static float uiVol;
     static bool fsToggleBool = true;
     static int resolutionValue;
 
@@ -58,11 +61,13 @@ public class OptionsMenu : MonoBehaviour
     {
         //Set the volume percentage texts to what they were last changed to.
         musicVolText.text = (int)(Mathf.InverseLerp(-60, 0, Mathf.RoundToInt(musicVol)) * 100) + "%";
-        effectsVolText.text = (int)(Mathf.InverseLerp(-50, 0, Mathf.RoundToInt(effectsVol)) * 100) + "%"; 
+        effectsVolText.text = (int)(Mathf.InverseLerp(-50, 0, Mathf.RoundToInt(effectsVol)) * 100) + "%";
+        uiVolText.text = (int)(Mathf.InverseLerp(-50, 0, Mathf.RoundToInt(effectsVol)) * 100) + "%";
 
         //Set the slider values (slider position) to what they were last changed to.
         musicVolSlider.value = musicVol;
         effectsVolSlider.value = effectsVol;
+        uiVolSlider.value = uiVol;
 
         //Set the fullscreen toggle bool to what it was last changed to
         fullscreenToggle.isOn = fsToggleBool;
@@ -74,6 +79,7 @@ public class OptionsMenu : MonoBehaviour
         //Save the current volumes
         musicVol = GetMixerVolume("musicVolume");
         effectsVol = GetMixerVolume("effectsVolume");
+        uiVol = GetMixerVolume("uiVolume");
 
         //Save the fullscreen toggle boolean
         fsToggleBool = fullscreenToggle.isOn;
@@ -109,6 +115,21 @@ public class OptionsMenu : MonoBehaviour
         else
         {
             mixerChannel.SetFloat("effectsVolume", volume); //Adjusts the effectsVolume parameter in the mixer.
+        }
+    }
+
+    //SETS EFFECTS VOLUME
+    public void SetUIVolume(float volume)
+    {
+        uiVolText.text = (int)(Mathf.InverseLerp(-50, 0, Mathf.RoundToInt(volume)) * 100) + "%"; //Displays and/or updates the UI volume in percentage
+
+        if (volume == -50) //If the volume is set to -60, which is the min value on the slider
+        {
+            mixerChannel.SetFloat("uiVolume", -80); //Adjusts the uiVolume parameter to the lowest number in the mixer.
+        }
+        else
+        {
+            mixerChannel.SetFloat("uiVolume", volume); //Adjusts the uiVolume parameter in the mixer.
         }
     }
 

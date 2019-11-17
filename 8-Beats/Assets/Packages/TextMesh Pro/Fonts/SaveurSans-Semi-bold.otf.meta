@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 56cd7781e6fe9a4408f5beafab7ec95e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Saveur Sans
+  fontNames:
+  - Saveur Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 449ac3075b8c16f4daedbdb0ba299f93, type: 3}
+  - {fileID: 12800000, guid: 8632ae7de1d2af4409c461d2085d58b4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

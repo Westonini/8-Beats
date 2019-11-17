@@ -24,13 +24,13 @@ public class PauseMenu : MonoBehaviour
     {
         //ESC INPUT DETECTION
         //If the player presses the "Escape" key the game will pause or unpause
-        if (Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused && !countingDown && !SongFinished.songFinished && !GameOverMenu.gameOverActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused && !countingDown && !SongFinished.songFinished && !GameOverMenu.gameOverActive && !StartPanel.startMenuOpen)
         {
-            EnablePauseMenu(true);
+            EnablePauseMenu(true); //Enable pause menu
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && gameIsPaused && !countingDown)
         {
-            EnablePauseMenu(false);
+            EnablePauseMenu(false); //Disable pause menu
         }
     }
 

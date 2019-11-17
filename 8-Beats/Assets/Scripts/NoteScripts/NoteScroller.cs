@@ -16,7 +16,7 @@ public class NoteScroller : MonoBehaviour
     private NoteFadeOut nfo;
 
     public delegate void NoteReachedDestination();
-    public static event NoteReachedDestination _noteReachedDestination;            //Event to be invoked when the note reaches its final destination (0, 0)
+    public static event NoteReachedDestination _noteReachedDestination;     //Event to be invoked when the note reaches its final destination (0, 0)
 
     void Awake()
     {

@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 //Manages the animations for the title screen as well as the scene transition
 public class TitleScreen : MonoBehaviour
 {
-    Animator TSanim; //Title Screen Animator
+    public GameObject preTitleScreen;
+    public GameObject titleScreen;
+    private bool loading;
 
-    private void Awake()
-    {
-        TSanim = GetComponent<Animator>(); //Get the animatior component that's on the same gameobject as this script
-    }
+    public Animator TSanim; //Title Screen Animator
 
     void Start()
     {
+        loading = true;
+
+        preTitleScreen.SetActive(true); //Turn on the preTitleScreen (to give the scene time to load)
+        titleScreen.SetActive(false);   //Turn off the titleScreen
+
         StartCoroutine("IntroAnim");            //Start the intro animation
-        AudioManager.instance.Play("MM_Music"); //Play the main menu music at Start().
     }
 
     void Update()
@@ -31,7 +34,7 @@ public class TitleScreen : MonoBehaviour
                 TSanim.SetBool("Intro", false);
             }
             //Else if the intro animation isn't currently playing but the outro animation is playing
-            else if (!TSanim.GetBool("Intro") && !TSanim.GetBool("Outro"))
+            else if (!TSanim.GetBool("Intro") && !TSanim.GetBool("Outro") && !loading)
             {
                 //Start the outro animation
                 StartCoroutine("OutroAnim");
@@ -42,8 +45,20 @@ public class TitleScreen : MonoBehaviour
     //INTRO ANIMATION
     IEnumerator IntroAnim()
     {
+        yield return new WaitForSeconds(0.5f); //Wait 0.5 seconds
+
+        AudioManager.instance.Play("MM_Music"); //Play the main menu music at Start().
+
+        yield return new WaitForSeconds(0.25f); //Wait 0.25 seconds
+
+        //Disable the preTitleScreen, enable the titleScreen, and start the intro animation
+        loading = false;
+        preTitleScreen.SetActive(false);
+        titleScreen.SetActive(true);
         TSanim.SetBool("Intro", true);
-        yield return new WaitForSeconds(2f);
+
+        yield return new WaitForSeconds(2f);  //Wait 2 seconds
+
         TSanim.SetBool("Intro", false);
     }
 
