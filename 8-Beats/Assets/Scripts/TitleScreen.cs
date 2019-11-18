@@ -12,6 +12,14 @@ public class TitleScreen : MonoBehaviour
 
     public Animator TSanim; //Title Screen Animator
 
+    private TitleScreenCutscene tsc;
+    public GameObject cutsceneScreen;
+
+    private void Awake()
+    {
+        tsc = GetComponent<TitleScreenCutscene>();   
+    }
+
     void Start()
     {
         loading = true;
@@ -67,6 +75,10 @@ public class TitleScreen : MonoBehaviour
     {
         TSanim.SetBool("Outro", true);
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(1);              //Load song select scene             
+        tsc.fadeAnim.SetBool("FadeOut", true);
+        yield return new WaitForSeconds(0.5f);
+        tsc.fadeAnim.SetBool("FadeOut", false);
+        cutsceneScreen.SetActive(true);
+        tsc.StartCoroutine("PlayCutscene");            
     }
 }
