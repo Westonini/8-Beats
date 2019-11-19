@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SongSelect : MonoBehaviour
 {
     public string songSceneName; //The name of the selected song's scene
+    public string difficulty;    //The difficulty selected
 
     //SONG SELECT BUTTON
     public void SelectSong()
