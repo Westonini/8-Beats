@@ -80,7 +80,7 @@ public class TitleScreen : MonoBehaviour
         cutsceneScreen.SetActive(true);
         tsc.StartCoroutine("PlayCutscene");
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.4f);
         tsc.fadeAnim.SetBool("FadeOut", false);
 
         titleScreen.SetActive(false);
