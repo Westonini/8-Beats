@@ -30,40 +30,52 @@ public class FinalNoteSpawner : MonoBehaviour
 
     void Start()
     {
-        //Loops 10 times
-        /* References for 120bpm:
-         * - 4 Seconds = Whole Note
-         * - 2 Seconds = Half Note
-         * - 1 Second = Quarter Note
-         * - 0.5 Seconds = Eighth Note
-         */
-
         /* Friendly Reminder: Only Use Quarter & Eighth Notes for First Level! Make it easier!
            BPM = 110 for First Tune's Midi
-           ( 1.000 ) Quarter note = 60 / BPM              ->      96
-           ( 2.000 ) Half note = 120 / BPM                ->      192
-           ( 0.500 ) Eighth note = 30 / BPM               ->      48
-           ( 0.250 ) Sixteenth note = 15 / BPM            ->      24
-           ( 1.500 ) Dotted-quarter note = 90 / BPM       ->      144
-           ( 0.750 ) Dotted-eighth note = 45 / BPM        ->      72
-           ( 0.375 ) Dotted-sixteenth note = 22.5 / BPM   ->      36
-           ( 0.667 ) Triplet-quarter note = 40 / BPM      ->      64
-           ( 0.333 ) Triplet-eighth note = 20 / BPM       ->      32
-           ( 0.165 ) Triplet-sixteenth note = 10 / BPM    ->      16
+           Hey guys, thanks for all of your help with coding this program! Anyways, here's a 
+           quick guide for most of my comments throughout this part of the code:
+
+           1. A portion of code under "One Bar" refers to the instantiated notes that will spawn
+              in the span of four seconds. Usually, it would be four instantiated notes in four
+              seconds, or in other words, one note spawned per second. Other bars such as 
+              "Two / Three / Four / Last" bars just refer to order, that's all.
+
+           2. I like to refer to these one-second spawned notes as "quarter" or normal notes, since technically
+              they're a quarter of a single bar in code. Usually, the double value at the end of the
+              InstantiateNote() instance is added with a value of one to create another quarter note.
+
+           3. If you want to add a quicker note such as an "eighth" note, all you have to do is add a value of
+              one half to the previous value of the InstantiateNote() object and use the new, added value
+              for your next InstantiateNote() instance. 
+
+           4. The only portions of the code that needs to be completed is the Pretty Epic Intrumental Arc, 
+              Final Intro Vocal Echo, Final Main Title Refrain Arc, Final Instrum Arc, & the Gradual Instrum End.
+              Most of these parts are ver similar to their previous versions earlier in the code, by the way.
+              The only new parts that need to be created are the Pretty Epic Instrumental Arc & the Gradual Instrum End.
+
+           5. Also you may notice that for the mentioned previous parts, I managed to comment the start times of
+              each single bar that happens in sync with the music. You're more than welcome to change the kind of 
+              InstantiateNote() object that'll be created, just don't forget when it usually starts to sync it back
+              to the music.
+
+           Anyways, thank you so much for your help, you guys! I gotta catch up with other assignments for the 
+           meantime, but I'll be back later to help finish this once and for all!          
          */
 
-        /* Vocal Introduction:  Beats starting / landing on press @ -> Instantiate Note @ */
+
+
+        /* Vocal Introduction:  Beats starting / landing on press @ 4.5 -> Instantiate Note @ 2.5*/
         // Whole Portion is treated twice as slow for suspense; One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 2.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 5.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 5.3);
         // One Bar
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 9.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 9.25);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 12.5);
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 16.25);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 16.25);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 19.25);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 19.25);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 19);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 19);
         // One Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 22.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 24.5);
@@ -94,7 +106,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 51);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 51.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 52);
-        // Landing Note for One Bar
+        // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 52.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 53.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 54.5);
@@ -118,7 +130,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 68);
 
 
-        /* First Vocal Chorus Arc:  Beats starting / landing on press @ 54.5 Seconds -> Instantiate Note @ 52.5 */
+        /* First Vocal Chorus Arc:  Beats starting / landing on press @ 70.5 Seconds -> Instantiate Note @ 68.5 */
         // One Bar for Settling into Chorus Arc
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 68.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 69.5);
@@ -169,7 +181,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 100);
 
 
-        /* First Intro Vocal Echo:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
+        /* First Intro Vocal Echo:  Beats starting / landing on press @ 102.5 Seconds -> Instantiate Note @ 100.5 */
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 100.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 101.5);
@@ -195,7 +207,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 115.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 115.5);
 
-        /* First Main Title Refrain Arc:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
+        /* First Main Title Refrain Arc:  Beats starting / landing on press @ 118.5 Seconds -> Instantiate Note @ 116.5 */
         // One Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 116.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 117.5);
@@ -250,7 +262,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 147.5);
 
 
-        /* Second Instrum Arc:  Beats starting / landing on press @ 38.5 Seconds -> Instantiate Note @ 36.5 */
+        /* Second Instrum Arc:  Beats starting / landing on press @ 150.5 Seconds -> Instantiate Note @ 148.5 */
         // One Bar - Settle
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 148.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 149.5);
@@ -277,20 +289,264 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 163.5);
 
 
-        /* Second Vocal Chorus Arc:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 164.5);
+        /* Second Vocal Chorus Arc:  Beats starting / landing on press @ 166.5 Seconds -> Instantiate Note @ 164.5 */
+        // One Bar for Settling into Chorus Arc
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 164.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 165.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 166.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 167.5);
+        // One Bar - Intensive
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 168.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 169.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 170);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 170.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 171.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 172);
+        // Two Bar - Settle
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 172.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 173.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 174.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 175.5);
+        // Two Bar - Intensive
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 176.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 177.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 178);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 178.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 179.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 180);
+        // Three Bar - Settle
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 180.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 181.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 182.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 183.5);
+        // Three Bar - Intensive
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 184.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 185.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 186);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 186.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 187.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 188);
+        // Four Bar - Settle
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 188.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 189.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 190.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 191.5);
 
-        /* Second Intro Vocal Echo:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
+        // Four Bar - Intensive
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 192.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 193.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 194);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 194.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 195.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 196);
 
-        /* Second Main Title Refrain Arc:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
+        /* Second Intro Vocal Echo:  Beats starting / landing on press @ 198.5 Seconds -> Instantiate Note @ 196.5 */
+        // One Bar 
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 196.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 197.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 198.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 199.5);
+        // One Bar - Double
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 196.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 197.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 197.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 198.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 199.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 199.5);
+        // One Bar 
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 200.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 201.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 202.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 203.5);
+        // One Bar - Double
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 204.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 205.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 205.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 206.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 207.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 207.5);
+        // One Bar - Extra Ba-Dums
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 208.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 209.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 210.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 211.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 212);
 
-        /* Pretty Epic Intrumental Arc:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
 
-        /* Final Intro Vocal Echo:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
+        /* Second Main Title Refrain Arc:  Beats starting / landing on press @ 214.5 Seconds -> Instantiate Note @ 212.5 */
+        // One Bar
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 212.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 213.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 213.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 214.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 215.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 215.5);
+        // One Bar
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 216.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 217.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 217.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 218.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 219.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 219.5);
+        // One Bar
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 220.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 221.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 221.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 222.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 223.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 223.5);
+        // One Bar
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 224.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 225.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 226.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 227.5);
+        // Two Bar
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 228.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 229.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 229.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 230.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 231.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 231.5);
+        // Two Bar
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 232.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 233.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 233.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 234.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 235.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 235.5);
+        // Two Bar
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 236.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 237.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 237.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 238.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 239.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 239.5);
+        // Two Bar
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 240.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 241.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 242.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 243.5);
 
-        /* Final Main Title Refrain Arc:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
 
-        /* Final Instrum Arc:  Beats starting / landing on press @ Seconds -> Instantiate Note @ */
+        /* Third Instrum Arc:  Beats starting / landing on press @ 246.5 Seconds -> Instantiate Note @ 244.5 */
+        // One Bar - Settle 
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 244.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 245.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 246.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 247.5);
+        // One Bar - Intensive
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 248.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 249.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 250.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 250.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 251.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 251.5);
+        // Two Bar - Settle
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 252.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 253.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 254.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 255.5);
+        // Two Bar - Intensive
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 256.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 257.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 258.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 258.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 259.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 259.5);
+
+
+        /* Pretty Epic Intrumental Arc:  Beats starting / landing on press @ 262.5 Seconds -> Instantiate Note @ 260.5 */
+        // One Bar Start @ 260.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 260.5);
+        // One Bar Start @ 264.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 264.5);
+        // One Bar Start @ 268.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 268.5);
+        // One Bar Start @ 272.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 272.5);
+        // Two Bar Start @ 276.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 276.5);
+        // Two Bar Start @ 280.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 280.5);
+        // Two Bar Start @ 284.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 284.5);
+        // Two Bar Start @ 288.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 288.5);
+
+
+        /* Final Intro Vocal Echo:  Beats starting / landing on press @ 294.5 Seconds -> Instantiate Note @ 292.5 */
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 292.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 293.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 294.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 295.5);
+        // One Bar - Double
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 296.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 297.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 297.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 298.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 299.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 299.5);
+        // One Bar
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 300.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 301.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 302.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 303.5);
+        // One Bar - Double
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 304.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 305.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 305.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 306.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 307.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 307.5);
+
+
+        /* Final Main Title Refrain Arc:  Beats starting / landing on press @ 310.5 Seconds -> Instantiate Note @ 308.5 */
+        // One Bar Start @ 308.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 308.5);
+        // One Bar Start @ 312.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 312.5);
+        // One Bar Start @ 316.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 316.5);
+        // One Bar Start @ 320.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 320.5);
+        // Two Bar Start @ 324.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 324.5);
+        // Two Bar Start @ 328.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 328.5);
+        // Two Bar Start @ 332.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 332.5);
+        // Two Bar Start @ 336.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 336.5);
+
+
+        /* Final Instrum Arc:  Beats starting / landing on press @ 342.5 Seconds -> Instantiate Note @ 340.5 */
+        // One Bar Start @ 340.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 340.5);
+        // One Bar Start @ 344.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 344.5);
+        // One Bar Start @ 348.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 348.5);
+        // One Bar Start @ 352.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 352.5);
+        // Two Bar Start @ 356.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 356.5);
+        // Two Bar Start @ 360.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 360.5);
+        // Two Bar Start @ 364.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 364.5);
+        // Two Bar Start @ 368.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 368.5);
+
+
+        /* Gradual Instrum End:  Beats starting / landing on press @ 374.5 Seconds -> Instantiate Note @ 372.5 */
+        // Last Bar Start @ 372.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 372.5);
+        // Last Bar Start @ 376.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 376.5);
+        // Last Bar Start @ 380.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 380.5);
+        // Last Bar Start @ 384.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 384.5);
 
 
     }
