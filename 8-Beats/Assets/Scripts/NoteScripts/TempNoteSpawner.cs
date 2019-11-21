@@ -31,6 +31,12 @@ public class TempNoteSpawner : MonoBehaviour
     void Start()
     {
         //Loops 10 times
+        /**
+         * References:
+         * - 2 Seconds = Half Note
+         * - 4 Seconds = Whole Note
+         * - 1 Second = Quarter Note
+         */
         for (int i = 0; i <= 10; i++)
         {
             //Instantiate one note in each direction by calling the InstantiateNote() function
