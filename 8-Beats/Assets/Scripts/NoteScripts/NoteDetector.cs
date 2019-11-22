@@ -9,6 +9,9 @@ public class NoteDetector : MonoBehaviour
     public KeyCode pressedKey1;
     public KeyCode pressedKey2;
 
+    public delegate void NoteHit();
+    public static event NoteHit _noteHit;     //Event to be invoked when a note gets hit
+
     // Update is called once per frame
     void Update()
     {
@@ -16,6 +19,12 @@ public class NoteDetector : MonoBehaviour
         {
             if(canBePressed)
             {
+                ComboTracker.AddToComboCount();
+
+                //Call any methods that are currently subscribed to the _noteReachedDestination event
+                if (_noteHit != null)
+                    _noteHit();
+
                 gameObject.SetActive(false);
                 AudioManager.instance.PlayOneShot("NoteHit");
             }

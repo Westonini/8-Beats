@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class EnlargeText : MonoBehaviour
 {
-    public Animator textAnim;
+    private Animator textAnim;
+
+    private void Awake()
+    {
+        textAnim = GetComponent<Animator>();
+    }
 
     //ENLARGE TEXT WHEN MOUSED OVER
-    void Enlarge()
+    public void Enlarge()
     {
-        //
+        textAnim.SetBool("Shrink", false);
+        textAnim.SetBool("Enlarge", true);
     }
 
     //NORMALIZE TEXT WHEN MOUSE LEAVES
-    void Normalize()
+    public void Shrink()
     {
-        //
+        textAnim.SetBool("Shrink", true);
+        textAnim.SetBool("Enlarge", false);
     }
 }

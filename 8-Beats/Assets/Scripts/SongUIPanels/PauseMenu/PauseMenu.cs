@@ -94,17 +94,17 @@ public class PauseMenu : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);         //Wait half a second before running the following code
 
-        countdownText.color = new Color32(255, 0, 0, 255);   //Change the countdown text color to red
+        //countdownText.color = new Color32(255, 0, 0, 255);   //Change the countdown text color to red
         countdownText.text = "3";                            //Change the countdown text to "3"
 
         yield return new WaitForSecondsRealtime(1f);         //Wait one second before running the following code
 
-        countdownText.color = new Color32(255, 255, 0, 255); //Change the countdown text color to yellow
+        //countdownText.color = new Color32(255, 255, 0, 255); //Change the countdown text color to yellow
         countdownText.text = "2";                            //Change the countdown text to "2"
 
         yield return new WaitForSecondsRealtime(1f);         //Wait one second before running the following code
 
-        countdownText.color = new Color32(0, 255, 0, 255);   //Change the countdown text color to green
+        //countdownText.color = new Color32(0, 255, 0, 255);   //Change the countdown text color to green
         countdownText.text = "1";                            //Change the countdown text to "1"
 
         yield return new WaitForSecondsRealtime(1f);         //Wait one second before running the following code

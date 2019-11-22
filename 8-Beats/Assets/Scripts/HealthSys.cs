@@ -20,8 +20,9 @@ public class HealthSys : MonoBehaviour
         if (health > 0)
         {
             health -= damageAmount; //Decrease health by the damageAmount value
-        }
 
-        Debug.Log("HEALTH DECREASED. Current Health: " + health); //Shows the current health in the console.
+            if (health < 0)
+                HealthSys.health = 0;
+        }
     }
 }

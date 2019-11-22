@@ -31,5 +31,12 @@ public class SongFinished : MonoBehaviour
             rm.EnableResultsMenu();
             songFinished = true;
         }
+
+        /*//Test code to see Results Screen as soon as game starts
+        if (!songFinished)
+        {
+            rm.EnableResultsMenu();
+            songFinished = true;
+        }*/
     }
 }

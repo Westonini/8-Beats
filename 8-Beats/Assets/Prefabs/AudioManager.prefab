@@ -57,7 +57,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: NoteHit
     clip: {fileID: 8300000, guid: fc7eaca02bb398941b2ce032d2770c85, type: 3}
-    volume: 0.25
+    volume: 0.1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: NoteMiss
     clip: {fileID: 8300000, guid: d1f390d103744da4288afc82244464af, type: 3}
-    volume: 0.25
+    volume: 0.125
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SongComplete
     clip: {fileID: 8300000, guid: d2e52ba76ae77974194a6394b9ab0899, type: 3}
-    volume: 0.75
+    volume: 0.7
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0

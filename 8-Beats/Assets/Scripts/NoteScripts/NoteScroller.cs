@@ -54,18 +54,23 @@ public class NoteScroller : MonoBehaviour
         //Check for when the note's position is at the coordinates (0, 0)
         if (transform.position == new Vector3(0, 0, 0) && !reachedEndPos)
         { 
-            //Calls the Damage script to decrease the player's health on a miss
+            //Calls the Damage method to decrease the player's health on a miss
             HealthSys.Damage();
+
+            //Calls the ResetComboCount method to reset the player's current combo on a miss
+            ComboTracker.ResetComboCount();
 
             //Play note miss sound
             if (HealthSys.health > 0)
-             AudioManager.instance.PlayOneShot("NoteMiss");
-
-            nfo.StartCoroutine("FadeAndDestroy");
+             AudioManager.instance.Play("NoteMiss");
 
             //Call any methods that are currently subscribed to the _noteReachedDestination event
             if (_noteReachedDestination != null)
+            {
                 _noteReachedDestination();
+            }
+
+            nfo.StartCoroutine("FadeAndDestroy");
 
             reachedEndPos = true;
         }

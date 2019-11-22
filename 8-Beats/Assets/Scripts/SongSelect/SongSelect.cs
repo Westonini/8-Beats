@@ -12,7 +12,9 @@ public class SongSelect : MonoBehaviour
     //SONG SELECT BUTTON
     public void SelectSong()
     {
-        SceneManager.LoadScene(songSceneName); //Load the scene of the song
+        DifficultyTracker.difficultyLevel = difficulty; //Set difficultyLevel on DifficultyTracker to whatever the difficulty is
+
         AudioManager.instance.Stop("MM_Music"); //Stops the main menu music
+        SceneManager.LoadScene(songSceneName); //Load the scene of the song
     }
 }
