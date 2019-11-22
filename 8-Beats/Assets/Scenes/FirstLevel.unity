@@ -4548,7 +4548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261555951}
-  - component: {fileID: 1261555953}
+  - component: {fileID: 1261555952}
   m_Layer: 0
   m_Name: Notes
   m_TagString: Untagged
@@ -4570,7 +4570,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1261555953
+--- !u!114 &1261555952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4579,7 +4579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1261555950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ca3c05d1e23ca49908ebb3e4aeef01, type: 3}
+  m_Script: {fileID: 11500000, guid: 784183686222c0d43b757e0756c37327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   topSpawnPos: {fileID: 1764492639}
@@ -4593,6 +4593,14 @@ MonoBehaviour:
   upwardsNote: {fileID: 5234611290405528457, guid: 66a94fc19b5d23d4ba32bd6447173604,
     type: 3}
   rightwardsNote: {fileID: 5820440093546932581, guid: 0855e75d48c531042bd810145b8e594b,
+    type: 3}
+  downDouble: {fileID: 2793220181062279260, guid: d4726450388fb034e979a03eaec1791e,
+    type: 3}
+  upDouble: {fileID: 5234611290405528457, guid: ae3b53efad9f30241bfa88a998efd66e,
+    type: 3}
+  leftDouble: {fileID: 3745742446396092128, guid: 3d16f7f2a991a264f9d90ec271c9fa1e,
+    type: 3}
+  rightDouble: {fileID: 5820440093546932581, guid: 2b0e80b3d1ebcdb45a8d72c5c4594293,
     type: 3}
   topButton: {fileID: 7568750558900643050}
   rightButton: {fileID: 1471380098}

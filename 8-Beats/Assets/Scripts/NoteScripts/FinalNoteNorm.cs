@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Temporary note spawner for spawning notes in our Test song
-public class FinalNoteSpawner : MonoBehaviour
+public class FinalNoteNorm : MonoBehaviour
 {
     //Spawn Positions
     public Transform topSpawnPos;
@@ -19,6 +19,13 @@ public class FinalNoteSpawner : MonoBehaviour
     public GameObject rightwardsNote;
 
     [Space]
+    //Note Prefabs for Doubles
+    public GameObject downDouble;
+    public GameObject upDouble;
+    public GameObject leftDouble;
+    public GameObject rightDouble;
+
+    [Space]
     //Button GameObjects
     public GameObject topButton;
     public GameObject rightButton;
@@ -31,38 +38,7 @@ public class FinalNoteSpawner : MonoBehaviour
     void Start()
     {
         /* Friendly Reminder: Only Use Quarter & Eighth Notes for First Level! Make it easier!
-           BPM = 110 for First Tune's Midi
-           Hey guys, thanks for all of your help with coding this program! Anyways, here's a 
-           quick guide for most of my comments throughout this part of the code:
-
-           1. A portion of code under "One Bar" refers to the instantiated notes that will spawn
-              in the span of four seconds. Usually, it would be four instantiated notes in four
-              seconds, or in other words, one note spawned per second. Other bars such as 
-              "Two / Three / Four / Last" bars just refer to order, that's all.
-
-           2. I like to refer to these one-second spawned notes as "quarter" or normal notes, since technically
-              they're a quarter of a single bar in code. Usually, the double value at the end of the
-              InstantiateNote() instance is added with a value of one to create another quarter note.
-
-           3. If you want to add a quicker note such as an "eighth" note, all you have to do is add a value of
-              one half to the previous value of the InstantiateNote() object and use the new, added value
-              for your next InstantiateNote() instance. 
-
-           4. The only portions of the code that needs to be completed is the Pretty Epic Intrumental Arc 
-              & the Final Main Title Refrain Arc.
-              Most of these parts are ver similar to their previous versions earlier in the code, by the way.
-              The only new parts that need to be created are the Pretty Epic Instrumental Arc.
-
-           5. Also you may notice that for the mentioned previous parts, I managed to comment the start times of
-              each single bar that happens in sync with the music. You're more than welcome to change the kind of 
-              InstantiateNote() object that'll be created, just don't forget when it usually starts to sync it back
-              to the music.
-
-           Anyways, thank you so much for your help, you guys! I gotta catch up with other assignments for the 
-           meantime, but I'll be back later to help finish this once and for all!          
-         */
-
-
+           BPM = 110 for First Tune's Midi  */
 
         /* Vocal Introduction:  Beats starting / landing on press @ 4.5 -> Instantiate Note @ 2.5*/
         // Whole Portion is treated twice as slow for suspense; One Bar
@@ -72,10 +48,10 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 9.25);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 12.5);
         // One Bar
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 16.25);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 16.25);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 19);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 19);
+        InstantiateNote("DownScrollingNote", downDouble, topSpawnPos, topButton, 16.25);
+        InstantiateNote("UpScrollingNote", upDouble, bottomSpawnPos, bottomButton, 16.25);
+        InstantiateNote("LeftScrollingNote", leftDouble, rightSpawnPos, rightButton, 19);
+        InstantiateNote("RightScrollingNote", rightDouble, leftSpawnPos, leftButton, 19);
         // One Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 22.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 24.5);
@@ -103,9 +79,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 48.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 49.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 50.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 51);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 51.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 52);
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 52.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 53.5);
@@ -125,9 +99,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 64.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 65.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 66.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 67);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 67.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 68);
 
 
         /* First Vocal Chorus Arc:  Beats starting / landing on press @ 70.5 Seconds -> Instantiate Note @ 68.5 */
@@ -139,10 +111,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Intensive
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 72.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 73.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 74);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 74.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 75.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 76);
         // Two Bar - Settle
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 76.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 77.5);
@@ -151,10 +121,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // Two Bar - Intensive
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 80.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 81.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 82);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 82.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 83.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 84);
         // Three Bar - Settle
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 84.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 85.5);
@@ -163,10 +131,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // Three Bar - Intensive
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 88.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 89.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 90);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 90.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 91.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 92);
         // Four Bar - Settle
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 92.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 93.5);
@@ -175,10 +141,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // Four Bar - Intensive
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 96.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 97.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 98);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 98.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 99.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 100);
 
 
         /* First Intro Vocal Echo:  Beats starting / landing on press @ 102.5 Seconds -> Instantiate Note @ 100.5 */
@@ -190,10 +154,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Double
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 104.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 105.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 105.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 106.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 107.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 107.5);
         // One Bar
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 108.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 109.5);
@@ -202,33 +164,26 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Double
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 112.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 113.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 113.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 114.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 115.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 115.5);
+        
 
         /* First Main Title Refrain Arc:  Beats starting / landing on press @ 118.5 Seconds -> Instantiate Note @ 116.5 */
         // One Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 116.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 117.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 117.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 118.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 119.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 119.5);
         // One Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 120.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 121.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 121.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 122.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 123.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 123.5);
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 124.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 125.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 125.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 126.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 127.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 127.5);
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 128.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 129.5);
@@ -237,24 +192,18 @@ public class FinalNoteSpawner : MonoBehaviour
         // Two Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 132.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 133.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 133.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 134.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 135.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 135.5);
         // Two Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 136.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 137.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 137.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 138.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 139.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 139.5);
         // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 140.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 141.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 141.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 142.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 143.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 143.5);
         // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 144.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 145.5);
@@ -272,9 +221,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 152.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 153.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 154.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 154.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 155.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 155.5);
         // Two Bar - Settle
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 156.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 157.5);
@@ -284,9 +231,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 160.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 161.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 162.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 162.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 163.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 163.5);
 
 
         /* Second Vocal Chorus Arc:  Beats starting / landing on press @ 166.5 Seconds -> Instantiate Note @ 164.5 */
@@ -298,10 +243,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Intensive
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 168.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 169.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 170);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 170.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 171.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 172);
         // Two Bar - Settle
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 172.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 173.5);
@@ -310,10 +253,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // Two Bar - Intensive
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 176.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 177.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 178);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 178.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 179.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 180);
         // Three Bar - Settle
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 180.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 181.5);
@@ -322,23 +263,18 @@ public class FinalNoteSpawner : MonoBehaviour
         // Three Bar - Intensive
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 184.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 185.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 186);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 186.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 187.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 188);
         // Four Bar - Settle
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 188.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 189.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 190.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 191.5);
-
         // Four Bar - Intensive
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 192.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 193.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 194);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 194.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 195.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 196);
 
         /* Second Intro Vocal Echo:  Beats starting / landing on press @ 198.5 Seconds -> Instantiate Note @ 196.5 */
         // One Bar 
@@ -349,10 +285,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Double
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 196.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 197.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 197.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 198.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 199.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 199.5);
         // One Bar 
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 200.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 201.5);
@@ -361,40 +295,31 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Double
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 204.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 205.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 205.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 206.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 207.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 207.5);
         // One Bar - Extra Ba-Dums
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 208.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 209.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 210.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 211.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 212);
 
 
         /* Second Main Title Refrain Arc:  Beats starting / landing on press @ 214.5 Seconds -> Instantiate Note @ 212.5 */
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 212.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 213.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 213.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 214.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 215.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 215.5);
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 216.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 217.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 217.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 218.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 219.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 219.5);
         // One Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 220.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 221.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 221.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 222.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 223.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 223.5);
         // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 224.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 225.5);
@@ -403,24 +328,18 @@ public class FinalNoteSpawner : MonoBehaviour
         // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 228.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 229.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 229.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 230.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 231.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 231.5);
         // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 232.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 233.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 233.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 234.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 235.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 235.5);
         // Two Bar
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 236.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 237.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 237.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 238.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 239.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 239.5);
         // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 240.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 241.5);
@@ -438,9 +357,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 248.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 249.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 250.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 250.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 251.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 251.5);
         // Two Bar - Settle
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 252.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 253.5);
@@ -450,28 +367,51 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 256.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 257.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 258.5);
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 258.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 259.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 259.5);
 
 
         /* Pretty Epic Intrumental Arc:  Beats starting / landing on press @ 262.5 Seconds -> Instantiate Note @ 260.5 */
-        // One Bar Start @ 260.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 260.5);
-        // One Bar Start @ 264.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 264.5);
-        // One Bar Start @ 268.5
+        // Three Bar - Settle
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 260.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 261.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 262.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 263.5);
+        // Three Bar - Intensive
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 264.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 265.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 266.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 267.5);
+        // Four Bar - Settle
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 268.5);
-        // One Bar Start @ 272.5
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 269.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 270.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton,271.5);
+        // Four Bar - Intensive
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 272.5);
-        // Two Bar Start @ 276.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 276.5);
-        // Two Bar Start @ 280.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 280.5);
-        // Two Bar Start @ 284.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 284.5);
-        // Two Bar Start @ 288.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 288.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 273.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 274.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 275.5);
+
+        // One Bar for Settling into Chorus Arc
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 276.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 277.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 278.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 279.5);
+        // One Bar - Intensive
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 280.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 281.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 282.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 283.5);
+        // Two Bar - Settle
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 284.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 285.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 286.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 287.5);
+        // Two Bar - Intensive
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 288.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 289.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 290.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 291.5);
 
 
         /* Final Intro Vocal Echo:  Beats starting / landing on press @ 294.5 Seconds -> Instantiate Note @ 292.5 */
@@ -482,10 +422,8 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Double
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 296.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 297.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 297.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 298.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 299.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 299.5);
         // One Bar
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 300.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 301.5);
@@ -494,29 +432,51 @@ public class FinalNoteSpawner : MonoBehaviour
         // One Bar - Double
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 304.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 305.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 305.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 306.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 307.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 307.5);
 
 
         /* Final Main Title Refrain Arc:  Beats starting / landing on press @ 310.5 Seconds -> Instantiate Note @ 308.5 */
         // One Bar Start @ 308.5
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 308.5);
-        // One Bar Start @ 312.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 312.5);
-        // One Bar Start @ 316.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 309.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 310.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 311.5);
+        // One Bar
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 312.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 313.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 314.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 315.5);
+        // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 316.5);
-        // One Bar Start @ 320.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 317.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 318.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 319.5);
+        // One Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 320.5);
-        // Two Bar Start @ 324.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 324.5);
-        // Two Bar Start @ 328.5
-        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 328.5);
-        // Two Bar Start @ 332.5
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 321.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 322.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 323.5);
+        // Two Bar
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 324.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 325.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 326.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 327.5);
+        // Two Bar
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 328.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 329.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 330.5);
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 331.5);
+        // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 332.5);
-        // Two Bar Start @ 336.5
+        InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 333.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 334.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 335.5);
+        // Two Bar
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 336.5);
+        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 337.5);
+        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 338.5);
+        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 339.5);
 
 
         /* Final Instrum Arc:  Beats starting / landing on press @ 342.5 Seconds -> Instantiate Note @ 340.5 */
@@ -539,9 +499,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 352.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 353.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 354.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 355);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 355.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 356);
         // Two Bar Start @ 356.5
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 356.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 357.5);
@@ -561,10 +519,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 368.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 369.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 370.5);
-        InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 371);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 371.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 372);
-
 
 
         /* Gradual Instrum End:  Beats starting / landing on press @ 374.5 Seconds -> Instantiate Note @ 372.5 */
@@ -577,9 +532,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 376.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 377.5);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 378.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 379);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 379.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 380);
         // Last Bar Start @ 380.5
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 380.5);
         InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 381.5);
@@ -589,11 +542,7 @@ public class FinalNoteSpawner : MonoBehaviour
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 384.5);
         InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 385.5);
         InstantiateNote("DownScrollingNote", downwardsNote, topSpawnPos, topButton, 386.5);
-        InstantiateNote("RightScrollingNote", rightwardsNote, leftSpawnPos, leftButton, 387);
         InstantiateNote("UpScrollingNote", upwardsNote, bottomSpawnPos, bottomButton, 387.5);
-        InstantiateNote("LeftScrollingNote", leftwardsNote, rightSpawnPos, rightButton, 388);
-
-
     }
 
     private void InstantiateNote(string noteName, GameObject notePrefab, Transform spawnPos, GameObject buttonPos, double startingBeat)
