@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class StartPanel : MonoBehaviour
 {
+    public GameObject textGlow;
     public GameObject startPanel;
+    public Animator startPanelAnim;
     public static bool startMenuOpen;
 
     public Timer timerScript;
@@ -25,14 +27,23 @@ public class StartPanel : MonoBehaviour
     {
         if (startMenuOpen && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 1f; Time.fixedDeltaTime = 0.02f;    //Set the timescales to default (unfreezes the game)
-            AudioListener.pause = false;                         //Unpauses dspTime and unmutes all audio
-  
-            timerScript.secondsSinceStart = (float)AudioSettings.dspTime;   //Saves the time as a float when the song first starts.
-
-            startPanel.SetActive(false); //Disable the start panel
-
-            startMenuOpen = false; //Set the startMenuOpen bool to false
+            StartCoroutine("DisableStartMenu");
         }
+    }
+
+    IEnumerator DisableStartMenu()
+    {
+        textGlow.SetActive(false);                          //Disables text glow
+        startPanelAnim.SetBool("StartGame", true);          //Fades out the start menu
+
+        yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(1f)); //Waits one second in realtime (the game's timescale is currently 0)
+
+        Time.timeScale = 1f; Time.fixedDeltaTime = 0.02f;    //Set the timescales to default (unfreezes the game)
+        AudioListener.pause = false;                         //Unpauses dspTime and unmutes all audio
+        timerScript.secondsSinceStart = (float)AudioSettings.dspTime;   //Saves the time as a float when the song first starts.
+
+        startMenuOpen = false;       //Set the startMenuOpen bool to false
+        startPanel.SetActive(false); //Disable the start panel
+        this.enabled = false;        //Disables this script as it'll no longer be used until the scene gets restarted
     }
 }

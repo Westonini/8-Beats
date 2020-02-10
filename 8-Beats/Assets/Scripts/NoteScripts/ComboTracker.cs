@@ -8,7 +8,6 @@ public class ComboTracker : MonoBehaviour
     public static int maxCombo;
     public static int missCount;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentCombo = 0;
