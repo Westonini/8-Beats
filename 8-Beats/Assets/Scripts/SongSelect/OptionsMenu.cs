@@ -69,7 +69,7 @@ public class OptionsMenu : MonoBehaviour
         effectsVolSlider.value = effectsVol;
         uiVolSlider.value = uiVol;
 
-        //Set the fullscreen toggle bool to what it was last changed to
+        //Set the toggle bools to what they were last changed to
         fullscreenToggle.isOn = fsToggleBool;
     }
 
@@ -81,7 +81,7 @@ public class OptionsMenu : MonoBehaviour
         effectsVol = GetMixerVolume("effectsVolume");
         uiVol = GetMixerVolume("uiVolume");
 
-        //Save the fullscreen toggle boolean
+        //Save the toggle booleans
         fsToggleBool = fullscreenToggle.isOn;
 
         //Save the resolution value integer

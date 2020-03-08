@@ -24,7 +24,15 @@ public class Timer : MonoBehaviour
         songPosInBeats = 0f;
         //Sets the static noteSlowness variable to the _noteSlowness value from the inspector
         noteSlowness = _noteSlowness;
+        //If the player enabled the SlowMode, half the note speed.
+        if (SlowMode.slowModeEnabled)
+        {
+            if (noteSlowness > 1)
+                noteSlowness = noteSlowness * 2;
+            if (noteSlowness > 10) //Cannot be more than 10
+                noteSlowness = 10;
 
+        }
         //Number of seconds between each beat.   
         spb = 60f / bpm;
     }
